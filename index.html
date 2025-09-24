@@ -687,20 +687,25 @@
             </div>
             
             <div class="registration-form">
-                <form id="registrationForm">
+                <!-- UPDATED FORM WITH FORMSPREE INTEGRATION -->
+                <form id="registrationForm" action="https://formspree.io/f/mzzjblzy" method="POST">
+                    <!-- Hidden fields for Formspree -->
+                    <input type="hidden" name="_subject" value="New Registration - Afro-Merica-Tutorials">
+                    <input type="hidden" name="_replyto" value="" id="replyEmail">
+                    
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" class="form-control" required>
+                        <input type="text" id="fullName" name="fullName" class="form-control" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <input type="email" id="email" name="email" class="form-control" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" class="form-control">
+                        <input type="tel" id="phone" name="phone" class="form-control">
                     </div>
                     
                     <div class="form-group">
@@ -904,7 +909,7 @@
                     
                     <div class="form-group">
                         <label for="message">Additional Comments or Questions</label>
-                        <textarea id="message" class="form-control" rows="4"></textarea>
+                        <textarea id="message" name="message" class="form-control" rows="4"></textarea>
                     </div>
                     
                     <button type="submit" class="btn" style="width: 100%;">Submit Registration</button>
@@ -921,7 +926,7 @@
                 <button class="close-modal">&times;</button>
             </div>
             <p>Thank you for registering with Afro-Merica-Tutorials.com. We have received your application and will contact you shortly with more information about the services you selected.</p>
-            <p>If you have any immediate questions, please contact us at <strong>info@afro-merica-tutorials.com</strong>.</p>
+            <p>If you have any immediate questions, please contact us at <strong>tesfayphysics@gmail.com</strong>.</p>
             <button class="btn" style="margin-top: 1rem;" id="closeSuccessModal">Close</button>
         </div>
     </div>
@@ -1005,41 +1010,19 @@
             });
         });
         
-        // Registration Form Handling
+        // UPDATED Registration Form Handling with Formspree
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Set the reply-to email before form submission
+            const userEmail = document.getElementById('email').value;
+            document.getElementById('replyEmail').value = userEmail;
             
-            // Get form data
-            const formData = {
-                name: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                services: [],
-                tutorials: [],
-                research: [],
-                message: document.getElementById('message').value
-            };
+            // Let the form submit naturally to Formspree
+            // Formspree will handle the email sending
             
-            // Get selected services
-            document.querySelectorAll('input[name="service"]:checked').forEach(checkbox => {
-                formData.services.push(checkbox.value);
-            });
-            
-            // Get selected tutorials
-            document.querySelectorAll('input[name="tutorial"]:checked').forEach(checkbox => {
-                formData.tutorials.push(checkbox.value);
-            });
-            
-            // Get selected research tools
-            document.querySelectorAll('input[name="research"]:checked').forEach(checkbox => {
-                formData.research.push(checkbox.value);
-            });
-            
-            // In a real application, you would send this data to a server
-            console.log('Registration Data:', formData);
-            
-            // Show success modal
-            document.getElementById('successModal').style.display = 'flex';
+            // Show success modal after a short delay (form will submit in background)
+            setTimeout(() => {
+                document.getElementById('successModal').style.display = 'flex';
+            }, 1000);
         });
         
         // Modal close functionality
