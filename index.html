@@ -3,57 +3,1079 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="EUwjvIWTdFfO_8cV2Amxca99V13GzRVwpQdkr5e4Ssw" />
-    <meta name="description" content="A webpage showcasing EMBRACE Interactives for ionospheric studies.">
-    <meta name="keywords" content="EMBRACE, Interactives, GitHub Pages, Ionosphere">
-    <meta name="author" content="Tesfay Tesfu">
-    <meta name="google-site-verification" content="your-verification-code" />
-    <title>EMBRACE Interactives</title>
+    <title>Afro-Merica-Tutorials.com | Educational Excellence</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
             background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
         }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
         header {
-            background-color: #4CAF50;
+            background-color: var(--primary);
             color: white;
-            padding: 10px;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
             text-align: center;
         }
-        main {
-            padding: 20px;
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
-        footer {
-            background-color: #4CAF50;
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
             color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Services Section */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
             text-align: center;
-            padding: 10px;
-            position: fixed;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
             bottom: 0;
-            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
         }
-        a {
-            color: #4CAF50;
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .service-content ul {
+            list-style-type: none;
+        }
+        
+        .service-content ul li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Tutorials Section */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .topic-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .topic-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Registration Section */
+        .registration-section {
+            background-color: var(--light);
+        }
+        
+        .registration-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .checkbox-group {
+            margin-bottom: 1rem;
+        }
+        
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        
+        .checkbox-group input {
+            margin-right: 0.5rem;
+        }
+        
+        .service-category {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .service-category h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .subcategory {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subcategory h5 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-header h3 {
+            color: var(--primary);
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        /* Research Support Section */
+        .research-support {
+            background-color: var(--light);
+        }
+        
+        .research-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .research-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .research-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .research-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 0.8rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Welcome to EMBRACE Interactives</h1>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Afro-<span>Merica</span>-Tutorials</a>
+                <button class="mobile-menu-btn">☰</button>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#research">Research Support</a></li>
+                        <li><a href="#register" class="register-link">Register</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
-    <main>
-        <p>This webpage is dedicated to showcasing interactive tools and resources for ionospheric studies. Explore the tools below:</p>
-        <ul>
-            <li><a href="tool1.html">Tool 1: Visualizing Ionospheric Disturbances</a></li>
-            <li><a href="tool2.html">Tool 2: Geomagnetic Storm Analysis</a></li>
-            <li><a href="tool3.html">Tool 3: Total Electron Content (TEC) Maps</a></li>
-        </ul>
-        <p>For more details, visit our <a href="https://github.com/Tesfay-Tesfu/EMBRACE-Interactives">GitHub Repository</a>.</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 Tesfay Tesfu. All rights reserved.</p>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Empowering Minds Through Quality Education</h1>
+            <p>Comprehensive tutorials and professional services in Data Analytics, IT Infrastructure, Physics, Mathematics, and Research Support.</p>
+            <a href="#register" class="btn register-link">Register Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Data Analytics Service -->
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <div class="service-content">
+                        <h3>Data Analytics</h3>
+                        <p>Master data analysis with our comprehensive tutorials:</p>
+                        <ul>
+                            <li>Python for Data Science</li>
+                            <li>MATLAB Programming</li>
+                            <li>Power BI Visualization</li>
+                            <li>MSSQL Database Management</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- IT Infrastructure Consultancy -->
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <div class="service-content">
+                        <h3>IT Infrastructure Consultancy</h3>
+                        <p>Expert guidance for your technology infrastructure:</p>
+                        <ul>
+                            <li>Network Design & Implementation</li>
+                            <li>Cloud Solutions</li>
+                            <li>Security Assessment</li>
+                            <li>System Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Online Sales Integration -->
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <div class="service-content">
+                        <h3>Online Sales Integration Services</h3>
+                        <p>Boost your e-commerce capabilities:</p>
+                        <ul>
+                            <li>E-commerce Platform Setup</li>
+                            <li>Payment Gateway Integration</li>
+                            <li>Inventory Management Systems</li>
+                            <li>Customer Relationship Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section class="section" id="tutorials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tutorials</h2>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="physics">Physics</button>
+                <button class="tab-btn" data-tab="math">Mathematics</button>
+            </div>
+            
+            <!-- Physics Tutorials -->
+            <div class="tab-content active" id="physics-content">
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <h4>Mechanics</h4>
+                        <p>Comprehensive coverage of kinematics, dynamics, and statics with practical examples and problem-solving techniques.</p>
+                    </div>
+                    <div class="topic-card">
+                        <h4>Electricity</h4>
+                        <p>From basic circuits to advanced electromagnetic theory with hands-on experiments and simulations.</p>
+                    </div>
+                    <div class="topic-card">
+                        <h4>Magnetism</h4>
+                        <p>Explore magnetic fields, electromagnetic induction, and applications in modern technology.</p>
+                    </div>
+                    <div class="topic-card">
+                        <h4>Optics</h4>
+                        <p>Study light behavior, lenses, mirrors, and optical instruments with interactive visualizations.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mathematics Tutorials -->
+            <div class="tab-content" id="math-content">
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <h4>Algebra</h4>
+                        <p>Master equations, functions, polynomials, and algebraic structures with step-by-step guidance.</p>
+                    </div>
+                    <div class="topic-card">
+                        <h4>Geometry</h4>
+                        <p>Explore shapes, angles, proofs, and spatial relationships with visual learning approaches.</p>
+                    </div>
+                    <div class="topic-card">
+                        <h4>Calculus</h4>
+                        <p>Differential and integral calculus with applications in science, engineering, and economics.</p>
+                    </div>
+                    <div class="topic-card">
+                        <h4>Statistics</h4>
+                        <p>Data analysis, probability, hypothesis testing, and statistical inference for real-world problems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Support Section -->
+    <section class="section research-support" id="research">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research Support & Tools Training</h2>
+            </div>
+            <div class="research-content">
+                <div class="research-text">
+                    <h3>Enhance Your Research Capabilities</h3>
+                    <p>We provide comprehensive support for academic and professional research projects, from conceptualization to publication.</p>
+                    <p>Our training programs cover essential research tools:</p>
+                    <ul>
+                        <li><strong>LaTeX:</strong> Professional document preparation for academic papers</li>
+                        <li><strong>Overleaf:</strong> Collaborative LaTeX editor with real-time preview</li>
+                        <li><strong>Reference Management:</strong> Zotero, Mendeley, and EndNote training</li>
+                        <li><strong>Data Visualization:</strong> Creating compelling graphs and charts</li>
+                        <li><strong>Research Methodology:</strong> Qualitative and quantitative approaches</li>
+                    </ul>
+                    <a href="#register" class="btn register-link">Register for Research Support</a>
+                </div>
+                <div class="research-image">
+                    <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Research and Writing">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="section registration-section" id="register">
+        <div class="container">
+            <div class="section-title">
+                <h2>Registration Form</h2>
+                <p>Select the services and tutorials you're interested in</p>
+            </div>
+            
+            <div class="registration-form">
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Select Your Interests</label>
+                        
+                        <!-- Data Analytics Services -->
+                        <div class="service-category">
+                            <h4>Data Analytics Services</h4>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="Python for Data Science">
+                                    Python for Data Science
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="MATLAB Programming">
+                                    MATLAB Programming
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="Power BI Visualization">
+                                    Power BI Visualization
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="MSSQL Database Management">
+                                    MSSQL Database Management
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- IT Infrastructure Services -->
+                        <div class="service-category">
+                            <h4>IT Infrastructure Consultancy</h4>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="Network Design & Implementation">
+                                    Network Design & Implementation
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="Cloud Solutions">
+                                    Cloud Solutions
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="Security Assessment">
+                                    Security Assessment
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="System Optimization">
+                                    System Optimization
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Online Sales Integration -->
+                        <div class="service-category">
+                            <h4>Online Sales Integration Services</h4>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="E-commerce Platform Setup">
+                                    E-commerce Platform Setup
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="Payment Gateway Integration">
+                                    Payment Gateway Integration
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="Inventory Management Systems">
+                                    Inventory Management Systems
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="service" value="Customer Relationship Management">
+                                    Customer Relationship Management
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Tutorials -->
+                        <div class="service-category">
+                            <h4>Tutorials</h4>
+                            
+                            <!-- Physics Tutorials -->
+                            <div class="subcategory">
+                                <h5>Physics</h5>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="tutorial" value="Physics - Mechanics">
+                                        Mechanics
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="tutorial" value="Physics - Electricity">
+                                        Electricity
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="tutorial" value="Physics - Magnetism">
+                                        Magnetism
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="tutorial" value="Physics - Optics">
+                                        Optics
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Mathematics Tutorials -->
+                            <div class="subcategory">
+                                <h5>Mathematics</h5>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="tutorial" value="Math - Algebra">
+                                        Algebra
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="tutorial" value="Math - Geometry">
+                                        Geometry
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="tutorial" value="Math - Calculus">
+                                        Calculus
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="tutorial" value="Math - Statistics">
+                                        Statistics
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Research Support -->
+                        <div class="service-category">
+                            <h4>Research Support & Tools Training</h4>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="research" value="LaTeX Training">
+                                    LaTeX Training
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="research" value="Overleaf Training">
+                                    Overleaf Training
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="research" value="Reference Management">
+                                    Reference Management (Zotero, Mendeley, EndNote)
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="research" value="Research Methodology">
+                                    Research Methodology
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Comments or Questions</label>
+                        <textarea id="message" class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Submit Registration</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Registration Successful!</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <p>Thank you for registering with Afro-Merica-Tutorials.com. We have received your application and will contact you shortly with more information about the services you selected.</p>
+            <p>If you have any immediate questions, please contact us at <strong>info@afro-merica-tutorials.com</strong>.</p>
+            <button class="btn" style="margin-top: 1rem;" id="closeSuccessModal">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Afro-Merica-Tutorials</h3>
+                    <p>Providing quality education and professional services to empower individuals and organizations.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#research">Research Support</a></li>
+                        <li><a href="#register">Register</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@afro-merica-tutorials.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li>Address: 123 Education Street, Knowledge City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Afro-Merica-Tutorials.com. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Tab Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab') + '-content';
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+        
+        // Registration Form Handling
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                services: [],
+                tutorials: [],
+                research: [],
+                message: document.getElementById('message').value
+            };
+            
+            // Get selected services
+            document.querySelectorAll('input[name="service"]:checked').forEach(checkbox => {
+                formData.services.push(checkbox.value);
+            });
+            
+            // Get selected tutorials
+            document.querySelectorAll('input[name="tutorial"]:checked').forEach(checkbox => {
+                formData.tutorials.push(checkbox.value);
+            });
+            
+            // Get selected research tools
+            document.querySelectorAll('input[name="research"]:checked').forEach(checkbox => {
+                formData.research.push(checkbox.value);
+            });
+            
+            // In a real application, you would send this data to a server
+            console.log('Registration Data:', formData);
+            
+            // Show success modal
+            document.getElementById('successModal').style.display = 'flex';
+        });
+        
+        // Modal close functionality
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.getElementById('successModal').style.display = 'none';
+        });
+        
+        document.getElementById('closeSuccessModal').addEventListener('click', function() {
+            document.getElementById('successModal').style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === document.getElementById('successModal')) {
+                document.getElementById('successModal').style.display = 'none';
+            }
+        });
+        
+        // Register link functionality
+        document.querySelectorAll('.register-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Scroll to registration section
+                const targetElement = document.getElementById('register');
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
